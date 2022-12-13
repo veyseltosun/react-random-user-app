@@ -35,6 +35,8 @@ function App() {
      
 
       {user?.map((person, index) => {
+        return(
+
           <div key={index} className="card-container">
             <div className='header-container'>
               <img src={person.picture.large} alt="user pic" />
@@ -59,6 +61,7 @@ function App() {
               <p className='registered'>Resgister Date:{person.registered.date.slice(0,10)}</p>
             </div>
           </div>
+        
         )
 
       })}
