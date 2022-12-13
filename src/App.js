@@ -1,8 +1,11 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import logo from "./assets/email.svg"
+import emailSvg from "./assets/email.svg";
+import phoneSvg from "./assets/phone.svg";
+import locationSvg from "./assets/location.svg";
 
+ 
 
 
 
@@ -39,19 +42,19 @@ function App() {
 
           <div key={index} className="card-container">
             <div className='header-container'>
-              <img src={person.picture.large} alt="user pic" />
+              <img src={person.picture.large} alt="user pic"  />
               <p className="header" >{person.name.title} {person.name.first} {person.name.last}</p>
             </div>
             <div className='email-container'>
-              <img src="" alt="email icon"/>
+              <img src={emailSvg} alt="email icon" className='icon'/>
               <p className='email' >{person.email}</p>
             </div>
-            <div className='phone-contanainer'>
-              <img src='./assets/phone.svg' alt='icon phone'/>
+            <div className='phone-container'>
+              <img src={phoneSvg} alt='icon phone' className='icon'/>
               <p className='phone-number' >{person.phone}</p>
             </div>
             <div className='location-container'>
-              <img src='./assets/location.svg'/>
+              <img src={locationSvg} className='icon'/>
               <p className='location'>{person.location.state} {person.location.country}</p>
             </div>
             <div className='age-container'>
@@ -65,6 +68,8 @@ function App() {
         )
 
       })}
+
+      <button onClick={getData}>Radom User</button>
 
 
 
